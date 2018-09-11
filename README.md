@@ -13,5 +13,6 @@ runner=HTMLTestRunner.HTMLTestRunner(
                                     title='自动化测试报告',
                                     description='用例执行情况：')
 ```
+在报告中展示截图：需要在对应的case中打印一下截图名称，截图名称以 screenshot_*.png 格式命名
 ## 效果如下
 ![](6666.gif)
