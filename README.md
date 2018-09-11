@@ -14,3 +14,4 @@ runner=HTMLTestRunner.HTMLTestRunner(
                                     description='用例执行情况：')
 ```
 ## 效果如下
+![](6666.gif)
