@@ -1154,8 +1154,13 @@ class HTMLTestRunner(Template_mixin):
                 self._generate_report_test(rows, cid, tid, n, t, o, e, testCollectionUlList)
 
 
-            if ne > 0 or nf > 0 :
-                liTestActive = '<li class="test displayed active has-leaf fail" status="fail" bdd="false" test-id="' + desc + '_' + str(cid+1) + '">'
+            if ne > 0:
+                liTestActive = '<li class="test displayed active has-leaf error" status="error" bdd="error" test-id="' + desc + '_' + str(cid+1) + '">'
+                statusSpan = '<span class="test-status right error">error</span>'
+                nodeLevel = '<li class="node level-1 leaf error" status="error" test-id="' + desc + '_' + str(cid + 1) + '">'
+                categoryTbodyTd = '<span class="test-status error">error</span>'
+            elif nf > 0:
+                liTestActive = '<li class="test displayed active has-leaf fail" status="fail" bdd="false" test-id="' + desc + '_' + str(cid + 1) + '">'
                 statusSpan = '<span class="test-status right fail">fail</span>'
                 nodeLevel = '<li class="node level-1 leaf fail" status="fail" test-id="' + desc + '_' + str(cid + 1) + '">'
                 categoryTbodyTd = '<span class="test-status fail">fail</span>'
@@ -1164,6 +1169,7 @@ class HTMLTestRunner(Template_mixin):
                 statusSpan = '<span class="test-status right pass">pass</span>'
                 nodeLevel = '<li class="node level-1 leaf pass" status="pass" test-id="' + desc + '_' + str(cid + 1) + '">'
                 categoryTbodyTd = '<span class="test-status pass">pass</span>'
+                
             row1 = self.TEST_COLLECTION % dict(
                 li_test_active=liTestActive,
                 status_span=statusSpan,
