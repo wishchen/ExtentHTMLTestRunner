@@ -1287,10 +1287,10 @@ class HTMLTestRunner(Template_mixin):
             script=script,
             images=images,
         )
-        if n = 1:
+        if n == 1:
             nodeLevel = '<li class="node level-1 leaf fail" status="fail" test-id="' + desc + '_' + str(tid) + '_' + str(cid + 1) + '">'
             statusSpan = '<span class="test-status right fail">fail</span>'
-        elif n = 2:
+        elif n == 2:
             nodeLevel = '<li class="node level-1 leaf error" status="error" test-id="' + desc + '_' + str(tid) + '_' + str(cid + 1) + '">'
             statusSpan = '<span class="test-status right error">error</span>'
         else:
