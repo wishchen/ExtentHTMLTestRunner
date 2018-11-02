@@ -904,7 +904,8 @@ class _TestResult(TestResult):
         TestResult.startTest(self, test)
         # just one buffer for both stdout and stderr
         # self.outputBuffer = StringIO.StringIO()
-        self.outputBuffer = io.StringIO()
+        # self.outputBuffer = io.StringIO()
+        self.outputBuffer = io.BytesIO()
         stdout_redirector.fp = self.outputBuffer
         stderr_redirector.fp = self.outputBuffer
         self.stdout0 = sys.stdout
