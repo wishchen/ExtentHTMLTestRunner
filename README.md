@@ -1,5 +1,5 @@
 # ExtentHTMLTestRunner
-Create test report with Extent report use python
+python使用extent report模板执行测试、生成报告
 
 ## Use
 基于HTMLTestRuner改造，使用了Extent report的页面模板内容，使用方式和使用HTMLTestRuner方式一致。
@@ -19,5 +19,4 @@ runner=HTMLTestRunner(
 在报告中展示截图：
 - 截图须和html报告在同一目录下;
 - 需要在对应的case中打印一下截图名称，截图名称以 screenshot_*.png 格式命名.
-## 效果如下
-![](6666.gif)
+- 报告需要的extent.js、extent.css可能下载不了，如果报告展示有问题可能是这些资源没有拿到，注意检查下。
