@@ -457,7 +457,7 @@ class Template_mixin(object):
             <td class='status info' title='info' alt='info'><i
                     class='material-icons'>low_priority</i></td>
             <td class='timestamp'>stdo</td>
-            <td class='step-details'>%(script)s</td>
+            <td style="white-space:pre-wrap;word-break:break-all">%(script)s</td>
         </tr>
         <tr class='info' status='info'>
             <td class='status info' title='info' alt='info'><i
@@ -1264,10 +1264,7 @@ class HTMLTestRunner(Template_mixin):
         ssreg = re.compile(r'screenshot_.+?png')
         ss = ssreg.findall(uo)
         # ss = ';'.join(ss)
-        script = self.REPORT_TEST_OUTPUT_TMPL % dict(
-            id = tid,
-            output = saxutils.escape(uo+ue),
-        )
+        
         images = []
         for ima in ss:
             image = self.REPORT_IMAGE % dict(
@@ -1280,7 +1277,8 @@ class HTMLTestRunner(Template_mixin):
 
         script = self.REPORT_TEST_OUTPUT_TMPL % dict(
             id=cid,
-            output=saxutils.escape(uo+ue),
+            # output=saxutils.escape(uo+ue),
+            output=((uo+ue).replace("\n", "<br />")),
         )
 
         tBody = self.TBODY % dict(
