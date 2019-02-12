@@ -24,3 +24,4 @@ runner=HTMLTestRunner(
 
 ![](https://user-images.githubusercontent.com/21254276/50420065-354ad700-086f-11e9-8437-61cec335986d.gif)
 报告中截图点击小图展示大图还需[优化](https://github.com/wishchen/ExtentHTMLTestRunner/issues/2)
+![](https://github.com/wishchen/ExtentHTMLTestRunner/blob/master/6666.gif)
